@@ -29,5 +29,12 @@ namespace ProjectNotePad
             formExportBlocoDeNotas.Show();
 
         }
+
+        private void btnLeituraOffline_Click(object sender, EventArgs e)
+        {
+            FormLeituraOffline formLeituraOffline = new FormLeituraOffline();
+            this.Hide();
+            formLeituraOffline.Show();
+        }
     }
 }

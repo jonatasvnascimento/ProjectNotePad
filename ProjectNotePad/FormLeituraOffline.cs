@@ -16,5 +16,10 @@ namespace ProjectNotePad
         {
             InitializeComponent();
         }
+
+        private void FormLeituraOffline_Load(object sender, EventArgs e)
+        {
+            listView1.Columns.Add("Filial", 50, HorizontalAlignment.Left);
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace ProjectNotePad
             this.btnLeituraOffline.TabIndex = 0;
             this.btnLeituraOffline.Text = "LEITURA OFFLINE";
             this.btnLeituraOffline.UseVisualStyleBackColor = true;
+            this.btnLeituraOffline.Click += new System.EventHandler(this.btnLeituraOffline_Click);
             // 
             // btnExportarBlocoDeNotas
             // 
