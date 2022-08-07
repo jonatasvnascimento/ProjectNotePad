@@ -79,6 +79,7 @@ namespace ProjectNotePad
             this.btnSair.TabIndex = 4;
             this.btnSair.Text = "X";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // FormLeituraOffline
             // 

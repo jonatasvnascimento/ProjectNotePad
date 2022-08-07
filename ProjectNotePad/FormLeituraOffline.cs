@@ -17,9 +17,27 @@ namespace ProjectNotePad
             InitializeComponent();
         }
 
+        public class offline
+        {
+            public string filial { get; set; }
+            public string codbar { get; set; }
+            public string data { get; set; }
+            public string hora { get; set; }
+        }
+
         private void FormLeituraOffline_Load(object sender, EventArgs e)
         {
-            listView1.Columns.Add("Filial", 50, HorizontalAlignment.Left);
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+
+            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            FormInicial formInicial = new FormInicial();
+            this.Hide();
+            formInicial.Show();
         }
     }
 }
