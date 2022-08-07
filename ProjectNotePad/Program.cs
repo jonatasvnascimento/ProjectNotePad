@@ -17,7 +17,7 @@ namespace ProjectNotePad
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormExportBlocoDeNotas());
+            Application.Run(new FormInicial());
         }
     }
 }

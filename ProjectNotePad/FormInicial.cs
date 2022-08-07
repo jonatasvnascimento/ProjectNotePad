@@ -16,5 +16,18 @@ namespace ProjectNotePad
         {
             InitializeComponent();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnExportarBlocoDeNotas_Click(object sender, EventArgs e)
+        {
+            FormExportBlocoDeNotas formExportBlocoDeNotas = new FormExportBlocoDeNotas();
+            this.Hide();
+            formExportBlocoDeNotas.Show();
+
+        }
     }
 }

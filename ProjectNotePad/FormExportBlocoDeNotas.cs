@@ -124,5 +124,12 @@ namespace ProjectNotePad
         {
             ReadTxt();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormInicial formInicial = new FormInicial();
+            formInicial.Show();
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace ProjectNotePad
             this.tbxHora = new System.Windows.Forms.TextBox();
             this.lblPath = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,12 +160,24 @@ namespace ProjectNotePad
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // Form1
+            // btnSair
+            // 
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSair.Location = new System.Drawing.Point(564, 12);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(40, 35);
+            this.btnSair.TabIndex = 11;
+            this.btnSair.Text = "X";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // FormExportBlocoDeNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(616, 598);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.label3);
@@ -176,8 +189,9 @@ namespace ProjectNotePad
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormExportBlocoDeNotas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -199,6 +213,7 @@ namespace ProjectNotePad
         private System.Windows.Forms.TextBox tbxHora;
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnSair;
     }
 }
 
