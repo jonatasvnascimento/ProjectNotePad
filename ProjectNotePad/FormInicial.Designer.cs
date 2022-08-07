@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectNotePad
 {
-    partial class Form2
+    partial class FormInicial
     {
         /// <summary>
         /// Required designer variable.

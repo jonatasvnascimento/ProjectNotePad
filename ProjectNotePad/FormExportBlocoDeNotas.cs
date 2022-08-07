@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ProjectNotePad
 {
-    public partial class Form1 : Form
+    public partial class FormExportBlocoDeNotas : Form
     {
         public string path { get; set; }
         FileInfo file;
-        public Form1()
+        public FormExportBlocoDeNotas()
         {
             InitializeComponent();
         }

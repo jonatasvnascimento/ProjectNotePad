@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectNotePad
 {
-    partial class Form1
+    partial class FormExportBlocoDeNotas
     {
         /// <summary>
         ///  Required designer variable.
