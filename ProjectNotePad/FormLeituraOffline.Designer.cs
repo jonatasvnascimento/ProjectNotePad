@@ -33,7 +33,11 @@ namespace ProjectNotePad
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Filial = new System.Windows.Forms.ColumnHeader();
             this.btnSair = new System.Windows.Forms.Button();
+            this.CodBar = new System.Windows.Forms.ColumnHeader();
+            this.Data = new System.Windows.Forms.ColumnHeader();
+            this.Hora = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // textBox1
@@ -63,12 +67,22 @@ namespace ProjectNotePad
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Filial,
+            this.CodBar,
+            this.Data,
+            this.Hora});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(13, 72);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(581, 462);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Filial
+            // 
+            this.Filial.Text = "Filial";
             // 
             // btnSair
             // 
@@ -80,6 +94,20 @@ namespace ProjectNotePad
             this.btnSair.Text = "X";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // CodBar
+            // 
+            this.CodBar.Text = "CodBar";
+            this.CodBar.Width = 200;
+            // 
+            // Data
+            // 
+            this.Data.Text = "Data";
+            this.Data.Width = 100;
+            // 
+            // Hora
+            // 
+            this.Hora.Text = "Hora";
             // 
             // FormLeituraOffline
             // 
@@ -109,5 +137,9 @@ namespace ProjectNotePad
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.ColumnHeader Filial;
+        private System.Windows.Forms.ColumnHeader CodBar;
+        private System.Windows.Forms.ColumnHeader Data;
+        private System.Windows.Forms.ColumnHeader Hora;
     }
 }

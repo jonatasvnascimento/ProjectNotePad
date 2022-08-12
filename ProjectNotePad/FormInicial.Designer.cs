@@ -31,8 +31,8 @@ namespace ProjectNotePad
         {
             this.btnLeituraOffline = new System.Windows.Forms.Button();
             this.btnExportarBlocoDeNotas = new System.Windows.Forms.Button();
-            this.btnExportarAntigoOfflineMod05 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLeituraOffline
@@ -49,23 +49,13 @@ namespace ProjectNotePad
             // btnExportarBlocoDeNotas
             // 
             this.btnExportarBlocoDeNotas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExportarBlocoDeNotas.Location = new System.Drawing.Point(69, 226);
+            this.btnExportarBlocoDeNotas.Location = new System.Drawing.Point(69, 199);
             this.btnExportarBlocoDeNotas.Name = "btnExportarBlocoDeNotas";
             this.btnExportarBlocoDeNotas.Size = new System.Drawing.Size(468, 117);
             this.btnExportarBlocoDeNotas.TabIndex = 1;
             this.btnExportarBlocoDeNotas.Text = "EXPORTAR BLOCO DE NOTAS";
             this.btnExportarBlocoDeNotas.UseVisualStyleBackColor = true;
             this.btnExportarBlocoDeNotas.Click += new System.EventHandler(this.btnExportarBlocoDeNotas_Click);
-            // 
-            // btnExportarAntigoOfflineMod05
-            // 
-            this.btnExportarAntigoOfflineMod05.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExportarAntigoOfflineMod05.Location = new System.Drawing.Point(69, 405);
-            this.btnExportarAntigoOfflineMod05.Name = "btnExportarAntigoOfflineMod05";
-            this.btnExportarAntigoOfflineMod05.Size = new System.Drawing.Size(468, 117);
-            this.btnExportarAntigoOfflineMod05.TabIndex = 2;
-            this.btnExportarAntigoOfflineMod05.Text = "EXPORTAR ANTIGO OFFLINE MOD05";
-            this.btnExportarAntigoOfflineMod05.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
@@ -78,14 +68,23 @@ namespace ProjectNotePad
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(564, 561);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Jonatas";
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 585);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnExportarAntigoOfflineMod05);
             this.Controls.Add(this.btnExportarBlocoDeNotas);
             this.Controls.Add(this.btnLeituraOffline);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -93,6 +92,7 @@ namespace ProjectNotePad
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,7 +100,7 @@ namespace ProjectNotePad
 
         private System.Windows.Forms.Button btnLeituraOffline;
         private System.Windows.Forms.Button btnExportarBlocoDeNotas;
-        private System.Windows.Forms.Button btnExportarAntigoOfflineMod05;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Label label1;
     }
 }
