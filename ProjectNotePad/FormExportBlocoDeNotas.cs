@@ -19,7 +19,7 @@ namespace ProjectNotePad
         {
             InitializeComponent();
         }
-        public class offline
+        public class Offline
         {
             public string filial { get; set; }
             public string codbar { get; set; }
@@ -27,7 +27,7 @@ namespace ProjectNotePad
             public string hora { get; set; }
         }
 
-        List<offline> ret;
+        List<Offline> ret;
         private void Form1_Load(object sender, EventArgs e)
         {
             ReadTxt();
@@ -40,11 +40,11 @@ namespace ProjectNotePad
                 using (StreamReader txt = new StreamReader(path))
                 {
                     string line;
-                    List<offline> codbar = new List<offline>();
+                    List<Offline> codbar = new List<Offline>();
 
                     while ((line = txt.ReadLine()) != null)
                     {
-                        codbar.Add(new offline() { filial = tbxFilial.Text, codbar = line.ToString(), data = tbxData.Text, hora = tbxHora.Text });
+                        codbar.Add(new Offline() { filial = tbxFilial.Text, codbar = line.ToString(), data = tbxData.Text, hora = tbxHora.Text });
                     }
 
                     dataGridView1.DataSource = codbar;
