@@ -33,6 +33,8 @@ namespace ProjectNotePad
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.lblQtdLidas = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -70,12 +72,33 @@ namespace ProjectNotePad
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // lblQtdLidas
+            // 
+            this.lblQtdLidas.AutoSize = true;
+            this.lblQtdLidas.Location = new System.Drawing.Point(536, 43);
+            this.lblQtdLidas.Name = "lblQtdLidas";
+            this.lblQtdLidas.Size = new System.Drawing.Size(31, 15);
+            this.lblQtdLidas.TabIndex = 6;
+            this.lblQtdLidas.Text = "lidas";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(13, 537);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // FormLeituraOffline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(606, 546);
+            this.ClientSize = new System.Drawing.Size(606, 583);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.lblQtdLidas);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -97,5 +120,7 @@ namespace ProjectNotePad
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblQtdLidas;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

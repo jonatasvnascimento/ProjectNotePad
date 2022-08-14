@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace ProjectNotePad
 {
     public partial class FormLeituraOffline : Form
     {
+        public string path { get; set; }
         public FormLeituraOffline()
         {
             InitializeComponent();
@@ -49,17 +51,29 @@ namespace ProjectNotePad
         }
         private void InsertValueInListView()
         {
-            Offline offline = new Offline()
-            {
-                filial = "36",
-                codbar = textBox1.Text.ToString(),
-                data = getTime.Data(),
-                hora = getTime.Hora()
-            };
-            ListViewItem item = new ListViewItem(new[] { offline.filial.ToString(), offline.codbar.ToString(), offline.data.ToString(), offline.hora.ToString() });
-            listView1.Items.Add(item);
-        }
+            string codbar = textBox1.Text.ToString();
 
+            if (codbar.Length < 10)
+            {
+                MessageBox.Show("Codigo de barra menor que 10 caracteres");
+                return;
+            }
+            else
+            {
+                Offline offline = new Offline()
+                {
+                    filial = "36",
+                    codbar = codbar,
+                    data = getTime.Data(),
+                    hora = getTime.Hora()
+                };
+                ListViewItem item = new ListViewItem(new[] { offline.filial.ToString(), offline.codbar.ToString(), offline.data.ToString(), offline.hora.ToString() });
+                listView1.Items.Add(item);
+                lblQtdLidas.Text = listView1.Items.Count.ToString();
+                textBox1.Text = "";
+                textBox1.Focus();
+            }
+        }
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
@@ -68,11 +82,35 @@ namespace ProjectNotePad
             }
         }
 
+        private void saveTXT()
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Text Document|*.txt", ValidateNames = true })
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (TextWriter textWriter = new StreamWriter(new FileStream(saveFileDialog.FileName, FileMode.Create), Encoding.UTF8))
+                    {
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            textWriter.Write($"{item.SubItems[0].Text},{item.SubItems[1].Text},{item.SubItems[2].Text},{item.SubItems[3].Text}");
+                            textWriter.Write("\r\n");
+                        }
+                        MessageBox.Show("Salvo");
+                    }
+                }
+            }
+        }
+
         private void FormLeituraOffline_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormInicial formInicial = new FormInicial();
             this.Hide();
             formInicial.Show();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            saveTXT();
         }
     }
 }
