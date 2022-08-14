@@ -42,7 +42,10 @@ namespace ProjectNotePad
         {
             public static string Data()
             {
-                return DateTime.UtcNow.ToString("MM-dd-yyyy");
+                string data = DateTime.UtcNow.ToString("MM-dd-yyyy");
+                var result = data.Split("-");
+                var novaData = $"{result[2]}{result[0]}{result[1]}";
+                return novaData;
             }
             public static string Hora()
             {
@@ -72,8 +75,30 @@ namespace ProjectNotePad
                 lblQtdLidas.Text = listView1.Items.Count.ToString();
                 textBox1.Text = "";
                 textBox1.Focus();
+
+                SaveCodbar();
             }
         }
+
+        private void SaveCodbar()
+        {
+            DirectoryInfo directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+            if (!Directory.Exists($"{directory.FullName}\\backup"))
+            {
+                Directory.CreateDirectory($"{directory.FullName}\\backup");
+            }
+
+            using (TextWriter textWriter = new StreamWriter(new FileStream($"{directory.FullName}\\backup\\Teste.txt", FileMode.Create), Encoding.UTF8))
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    textWriter.Write($"{item.SubItems[0].Text},{item.SubItems[1].Text},{item.SubItems[2].Text},{item.SubItems[3].Text}");
+                    textWriter.Write("\r\n");
+                }
+            }
+        }
+
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
