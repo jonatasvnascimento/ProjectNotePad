@@ -31,7 +31,6 @@ namespace ProjectNotePad
         {
             this.btnLeituraOffline = new System.Windows.Forms.Button();
             this.btnExportarBlocoDeNotas = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -57,17 +56,6 @@ namespace ProjectNotePad
             this.btnExportarBlocoDeNotas.UseVisualStyleBackColor = true;
             this.btnExportarBlocoDeNotas.Click += new System.EventHandler(this.btnExportarBlocoDeNotas_Click);
             // 
-            // btnSair
-            // 
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSair.Location = new System.Drawing.Point(570, 12);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(40, 35);
-            this.btnSair.TabIndex = 3;
-            this.btnSair.Text = "X";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -84,13 +72,13 @@ namespace ProjectNotePad
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 585);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExportarBlocoDeNotas);
             this.Controls.Add(this.btnLeituraOffline);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormInicial_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +88,6 @@ namespace ProjectNotePad
 
         private System.Windows.Forms.Button btnLeituraOffline;
         private System.Windows.Forms.Button btnExportarBlocoDeNotas;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label1;
     }
 }

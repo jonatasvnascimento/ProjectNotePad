@@ -36,5 +36,10 @@ namespace ProjectNotePad
             this.Hide();
             formLeituraOffline.Show();
         }
+
+        private void FormInicial_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

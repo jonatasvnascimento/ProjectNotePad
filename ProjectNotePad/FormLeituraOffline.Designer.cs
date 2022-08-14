@@ -32,7 +32,6 @@ namespace ProjectNotePad
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
@@ -42,6 +41,7 @@ namespace ProjectNotePad
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(294, 23);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -61,17 +61,6 @@ namespace ProjectNotePad
             this.label2.TabIndex = 2;
             this.label2.Text = "QTD Lidas:";
             // 
-            // btnSair
-            // 
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSair.Location = new System.Drawing.Point(554, 12);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(40, 35);
-            this.btnSair.TabIndex = 4;
-            this.btnSair.Text = "X";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // listView1
             // 
             this.listView1.HideSelection = false;
@@ -88,14 +77,14 @@ namespace ProjectNotePad
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 546);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormLeituraOffline";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLeituraOffline";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLeituraOffline_FormClosed);
             this.Load += new System.EventHandler(this.FormLeituraOffline_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,7 +96,6 @@ namespace ProjectNotePad
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ListView listView1;
     }
 }

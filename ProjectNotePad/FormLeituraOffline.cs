@@ -27,35 +27,48 @@ namespace ProjectNotePad
 
         private void FormLeituraOffline_Load(object sender, EventArgs e)
         {
-            Offline offline = new Offline()
-            {
-                filial = "36",
-                codbar = "1002354768",
-                data = "20220801",
-                hora = "10:00"
-            };
-
             listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
+            //listView1.GridLines = true;
+            //listView1.FullRowSelect = true;
 
             listView1.Columns.Add("Filial", 60, HorizontalAlignment.Left);
             listView1.Columns.Add("CodBar", 200, HorizontalAlignment.Left);
             listView1.Columns.Add("Data", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Hora", 100, HorizontalAlignment.Left);
-
-            ListViewItem listViewItem = new ListViewItem();
-
-
-            listViewItem.SubItems.Add(offline.filial);
-            listViewItem.SubItems.Add(offline.codbar);
-            listViewItem.SubItems.Add(offline.data);
-            listViewItem.SubItems.Add(offline.hora);
-            listView1.Items.Add(listViewItem);
-
+        }
+        public static class getTime
+        {
+            public static string Data()
+            {
+                return DateTime.UtcNow.ToString("MM-dd-yyyy");
+            }
+            public static string Hora()
+            {
+                return DateTime.Now.ToString("HH:mm");
+            }
+        }
+        private void InsertValueInListView()
+        {
+            Offline offline = new Offline()
+            {
+                filial = "36",
+                codbar = textBox1.Text.ToString(),
+                data = getTime.Data(),
+                hora = getTime.Hora()
+            };
+            ListViewItem item = new ListViewItem(new[] { offline.filial.ToString(), offline.codbar.ToString(), offline.data.ToString(), offline.hora.ToString() });
+            listView1.Items.Add(item);
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                InsertValueInListView();
+            }
+        }
+
+        private void FormLeituraOffline_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormInicial formInicial = new FormInicial();
             this.Hide();
